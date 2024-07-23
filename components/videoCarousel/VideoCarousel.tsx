@@ -98,7 +98,7 @@ export default function VideoCarousel({}: {}) {
             <div className="mb-5">
               <iframe
                 className="mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
-                src="https://www.youtube.com/embed/B8L9GFHb-vw"
+                src="https://www.youtube.com/embed/WBI_MhkNVKA"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

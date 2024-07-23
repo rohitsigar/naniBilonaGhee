@@ -6,6 +6,8 @@ import DrawerButton from '@/components/DrawerButton'
 import Sidebar from '@/components/Sidebar'
 import Header from '@/components/header/Header1'
 import Link from 'next/link'
+import { FacebookPixelEvents } from '@/components/meta-pixel'
+import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -198,6 +200,9 @@ export default function RootLayout({
             </div>
           </div>
         </Providers>
+        <Suspense fallback={null}>
+          <FacebookPixelEvents />
+        </Suspense>
       </body>
     </html>
   )
