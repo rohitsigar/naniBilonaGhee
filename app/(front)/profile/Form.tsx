@@ -16,6 +16,8 @@ const Form = () => {
   const { data: session, update } = useSession()
   const router = useRouter()
 
+  console.log(session?.user._id)
+
   const {
     register,
     handleSubmit,

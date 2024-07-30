@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import animationData from '@/components/loading.json'
 import Lottie from 'react-lottie'
+import { GoogleSignInButton } from '@/components/AuthButtons'
 
 type Inputs = {
   email: string
@@ -54,12 +55,17 @@ const Form = () => {
   }
   return (
     <div>
+      
       {session && session.user && (
         <div className="h-full flex justify-center items-center w-full">
           <Lottie options={defaultOptions} height={200} width={200} />
         </div>
       )}
-      <div className="max-w-sm  mx-auto card bg-base-300 my-4">
+      {!session && (
+        <GoogleSignInButton/>
+      )}
+      
+      {/* <div className="max-w-sm  mx-auto card bg-base-300 my-4">
         {!(session && session.user) && (
           <div className="card-body">
             <h1 className="card-title">Sign in</h1>
@@ -134,8 +140,8 @@ const Form = () => {
             </div>
           </div>
         )}
-      </div>
-    </div>
+      </div> */}
+    </div>   
   )
 }
 export default Form

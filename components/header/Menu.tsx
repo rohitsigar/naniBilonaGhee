@@ -91,14 +91,14 @@ const Menu = () => {
                         Order history{' '}
                       </Link>
                     </li>
-                    <li onClick={handleClick}>
+                    {/* <li onClick={handleClick}>
                       <Link
                         href="/profile"
                         className="text-sm md:text-base lg:text-base"
                       >
                         Profile
                       </Link>
-                    </li>
+                    </li> */}
                     <li onClick={handleClick}>
                       <button
                         type="button"
