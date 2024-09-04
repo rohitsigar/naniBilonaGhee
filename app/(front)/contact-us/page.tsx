@@ -42,7 +42,7 @@ export default async function ContactUs() {
                           Business related queries
                         </p>
                         <p className="text-gray-600 text-xs md:text-base">
-                          business@nanibilonaghee.com
+                          nanibilonaghee@gmail.com
                         </p>
                         <p className="text-gray-600 text-xs md:text-base">
                           +91 9306273009
@@ -75,7 +75,7 @@ export default async function ContactUs() {
                           Customer queries
                         </p>
                         <p className="text-gray-600 text-xs md:text-base">
-                          customer@nanibilonaghee.com
+                          nanibilonaghee@gmail.com
                         </p>
                         <p className="text-gray-600 text-xs md:text-base">
                           +91 8198985878
