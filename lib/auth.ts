@@ -9,31 +9,31 @@ import { useRouter, useSearchParams } from 'next/navigation'
 
 export const config = {
   providers: [
-    CredentialsProvider({
-      credentials: {
-        email: {
-          type: 'email',
-        },
-        password: { type: 'password' },
-      },
-      async authorize(credentials) {
-        await dbConnect()
-        if (credentials == null) return null
+    // CredentialsProvider({
+    //   credentials: {
+    //     email: {
+    //       type: 'email',
+    //     },
+    //     password: { type: 'password' },
+    //   },
+    //   async authorize(credentials) {
+    //     await dbConnect()
+    //     if (credentials == null) return null
 
-        const user = await UserModel.findOne({ email: credentials.email })
+    //     const user = await UserModel.findOne({ email: credentials.email })
 
-        if (user) {
-          const isMatch = await bcrypt.compare(
-            credentials.password as string,
-            user.password
-          )
-          if (isMatch) {
-            return user
-          }
-        }
-        return null
-      },
-    }),
+    //     if (user) {
+    //       const isMatch = await bcrypt.compare(
+    //         credentials.password as string,
+    //         user.password
+    //       )
+    //       if (isMatch) {
+    //         return user
+    //       }
+    //     }
+    //     return null
+    //   },
+    // }),
     GoogleProvider(
       {
         clientId: process.env.GOOGLE_CLIENT_ID,
