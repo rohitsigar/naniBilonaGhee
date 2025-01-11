@@ -11,37 +11,43 @@ export const revalidate = 3600
 const getLatest = cache(async () => {
   await dbConnect()
   const products = await ProductModel.find({}).sort({ _id: -1 }).limit(10).lean()
-  return products as Product[]
+  const conversion = products as unknown
+  return conversion as Product[]
 })
 
 const getPhotos = cache(async () => {
   await dbConnect()
   const photos = await PhotoModel.find({}).sort({ _id: -1 }).lean()
-  return photos as Photo[]
+  const conversion = photos as unknown;
+  return conversion as Photo[]
 })
 
 const getFeatured = cache(async () => {
   await dbConnect()
   const products = await ProductModel.find({ isFeatured: true }).limit(3).lean()
-  return products as Product[]
+  const conversion = products as unknown;
+  return conversion as Product[]
 })
 
 const getFaq = cache(async () => {
   await dbConnect()
   const faqs = await FaqModel.find({}).sort({ _id: -1 }).limit(6).lean()
-  return faqs as Faq[]
+  const conversion = faqs as unknown;
+  return conversion as Faq[]
 })
 
 const getBySlug = cache(async (slug: string) => {
   await dbConnect()
   const product = await ProductModel.findOne({ slug }).lean()
-  return product as Product
+  const conversion = product as unknown;
+  return conversion as Product
 })
 
 const getPhotoById = cache(async (id: number) => {
   await dbConnect()
   const photo = await PhotoModel.findOne({ id }).lean()
-  return photo as Photo
+  const conversion = photo as unknown;
+  return conversion as Photo
 })
 
 const PAGE_SIZE = 3
@@ -101,7 +107,7 @@ const getByQuery = cache(
         : { _id: -1 }
 
     const categories = await ProductModel.find().distinct('category')
-    const products = await ProductModel.find(
+    const products : unknown = await ProductModel.find(
       {
         ...queryFilter,
         ...categoryFilter,
@@ -140,13 +146,13 @@ const getCategories = cache(async () => {
 
 const getSocialMedia = cache(async () => {
   await dbConnect()
-  const socials = await SocialModel.find({}).sort({ _id: -1 }).limit(6).lean()
+  const socials: unknown = await SocialModel.find({}).sort({ _id: -1 }).limit(6).lean()
   return socials as Social[]
 })
 
 const getBanners = cache(async () => {
   await dbConnect()
-  const banners = await BannerModel.find({}).sort({ _id: -1 }).limit(6).lean()
+  const banners: unknown = await BannerModel.find({}).sort({ _id: -1 }).limit(6).lean()
   return banners as Banner[]
 })
 
