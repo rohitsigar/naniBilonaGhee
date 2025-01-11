@@ -6,6 +6,7 @@ import OrderDetails from './OrderDetails'
 //   return {
 //     title: `Order ${params.id}`,
 //   }
+//
 // }
 
 // export const metadata = {
